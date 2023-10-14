@@ -1,0 +1,29 @@
+{
+  "name": "cypress-2",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test:booking:chrome": "cypress run --record --group booking --spec \"cypress/e2e/booking/*.js\" --browser chrome",
+    "test:loginAdmin:chrome": "cypress run --record --group loginAdmin --spec \"cypress/e2e/loginAdmin/*.js\" --browser chrome",
+    "test:mainpage:chrome": "cypress run --record -- group mainpage --spec \"cypress/e2e/mainpage/*.js\" --browser chrome",
+    "test:parallel:chrome": "run-p -c test:booking:chrome test:loginAdmin:chrome test:mainpage:chrome",
+    
+    "test:booking:firefox": "cypress run --record --group booking --spec \"cypress/e2e/booking/*.js\" --browser firefox",
+    "test:loginAdmin:firefox": "cypress run --record --group loginAdmin --spec \"cypress/e2e/loginAdmin/*.js\" --browser firefox",
+    "test:mainpage:firefox": "cypress run --record -- group mainpage --spec \"cypress/e2e/mainpage/*.js\" --browser firefox",
+    "test:parallel:firefox": "run-p -c test:booking:firefox test:loginAdmin:firefox test:mainpage:firefox",
+
+    "test:booking:electron": "cypress run --record --group booking --spec \"cypress/e2e/booking/*.js\" --browser electron",
+    "test:loginAdmin:electron": "cypress run --record --group loginAdmin --spec \"cypress/e2e/loginAdmin/*.js\" --browser electron",
+    "test:mainpage:electron": "cypress run --record -- group mainpage --spec \"cypress/e2e/mainpage/*.js\" --browser electron",
+    "test:parallel:electron": "run-p -c test:booking:electron test:loginAdmin:electron test:mainpage:electron",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "cypress": "^13.3.0",
+    "npm-run-all": "^4.1.5"
+  }
+}
